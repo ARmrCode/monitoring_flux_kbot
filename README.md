@@ -11,6 +11,7 @@ This stack enables:
 
 ## Components
 
+- **OpenTelemetry** - Framework for collecting metrics, logs, and traces from distributed systems for observability.
 - **Flux** — GitOps operator for automated reconciliation of configuration.  
 - **Prometheus** — Monitoring system for collecting metrics.  
 - **Loki** — Log aggregation system optimized for Kubernetes.  
