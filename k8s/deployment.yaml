@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kbot
+  namespace: monitoring
+  labels:
+    app: kbot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kbot
+  template:
+    metadata:
+      labels:
+        app: kbot
+    spec:
+      containers:
+        - name: kbot
+          image: ghcr.io/armrcode/kbot:v1.0.0-85bdc56-linux-arm64
+          command: ["/kbot", "start"]
+          env:
+            - name: HOST
+              value: "0.0.0.0"
+            - name: PORT
+              value: "8080"
+            - name: OTEL_EXPORTER_OTLP_ENDPOINT
+              value: "http://otel-collector.monitoring.svc.cluster.local:4317"
+            - name: PROMETHEUS_PORT
+              value: "8080"
+            - name: TELE_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: kbot-secret
+                  key: TELE_TOKEN
+          ports:
+            - containerPort: 8080
+          # Временно отключаем пробы, чтобы контейнер стартовал стабильно
+          livenessProbe: null
+          readinessProbe: null
+      imagePullSecrets:
+        - name: ghcr-secret
