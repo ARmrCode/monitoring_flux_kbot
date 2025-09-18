@@ -112,6 +112,15 @@ Grafana will be available at: [http://localhost:3000](http://localhost:3000)
 
 ---
 
+![flux](images/flux_get_all.jpg)
+![flux](images/flux_stats.jpg)
+![flux](images/k8s_pods.jpg)
+![flux](images/grafana_metric.jpg)
+![flux](images/grafana_stats.jpg)
+![flux](images/kbot_build_metrics.jpg)
+
+---
+
 ## References
 
 - [Flux Monitoring Guide](https://fluxcd.io/flux/guides/monitoring/)  
