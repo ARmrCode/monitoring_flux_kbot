@@ -29,7 +29,7 @@ This setup assumes that **Flux is already installed and configured** in your clu
 ```bash
 flux create source git flux-monitoring \
   --interval=30m \
-  --url=https://github.com/ARmrCode/flux-kbot-monitoring \
+  --url=https://github.com/ARmrCode/monitoring_flux_kbot \
   --branch=main
 ```
 
