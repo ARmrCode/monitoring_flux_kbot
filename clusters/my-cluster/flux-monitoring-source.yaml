@@ -8,4 +8,4 @@ spec:
   interval: 1m0s
   ref:
     branch: main
-  url: https://github.com/vanelin/flux-monitoring
+  url: https://github.com/ARmrCode/monitoring_flux_kbot
